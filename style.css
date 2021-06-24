@@ -6,13 +6,65 @@
     max-width: 800px;
     border: 10px solid #1111;
     margin: 70px auto;
+    overflow: hidden;
+    position: relative;
 }
 .slide-show .slides .item img{
     width: 100%;
+    display: block; 
 }
 .slide-show .slides .item{
     display: none;
 }
 .slide-show .slides .item.active{
     display: block;
+}
+.slide-show .slides .item.active img{
+    animation: slide 1s ease;
+}
+@keyframes slide {
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.effect-slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.effect-slider .box{
+    background: #fff;
+    float: left;
+    opacity: 0;
+}
+.effect-slider .box.hide{
+    animation: effect-h 1s ease forwards;
+}
+.effect-slider .box.show{
+    animation: effect-sh 1s ease forwards;
+}
+@keyframes effect-h {
+    0%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+@keyframes effect-sh {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
 }
