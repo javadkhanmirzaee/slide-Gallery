@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.slide-show{
+    max-width: 800px;
+    border: 10px solid #1111;
+    margin: 70px auto;
+}
+.slide-show .slides .item img{
+    width: 100%;
+}
+.slide-show .slides .item{
+    display: none;
+}
+.slide-show .slides .item.active{
+    display: block;
+}
